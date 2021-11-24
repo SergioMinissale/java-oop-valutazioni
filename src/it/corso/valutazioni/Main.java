@@ -12,7 +12,7 @@ public class Main {
 		int percentualeAssenze;
 		float mediaVoti;
 		float max = 5;
-		boolean esito;
+		boolean esito = true;
 
 		// array
 		for (int i = 0; i < randomValutazione.length; i++) {
@@ -21,15 +21,16 @@ public class Main {
 			mediaVoti = randomGenerator.nextFloat() * max;
 
 			randomValutazione[i] = new CalcolaValutazione(i + 1, percentualeAssenze, mediaVoti);
-			if (esito = true) {
+			esito = randomValutazione[i].esito();
+			if (esito == true) {
 
 				System.out.println("ID studente: " + randomValutazione[i].idStudente + " \ncon un totale di "
 						+ randomValutazione[i].percentualeAssenze + " assenze" + " e una media voti pari a "
-						+ randomValutazione[i].mediaVoti + " è stato: " + randomValutazione[i].esito());
+						+ randomValutazione[i].mediaVoti + " è stato: PROMOSSO");
 			} else {
 				System.out.println("ID studente: " + randomValutazione[i].idStudente + " \ncon un totale di "
 						+ randomValutazione[i].percentualeAssenze + " assenze" + " e una media voti pari a "
-						+ randomValutazione[i].mediaVoti + " è stato: " + randomValutazione[i].esito());
+						+ randomValutazione[i].mediaVoti + " è stato: BOCCIATO");
 			}
 
 		}
